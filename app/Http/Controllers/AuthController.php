@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
 use Google_Client;
-use Facebook\facebook;
+use facebook\Facebook;
 
 class AuthController extends Controller
 {
@@ -131,11 +131,10 @@ class AuthController extends Controller
             $response = $fb->get('/me?fields=id,first_name,last_name,email,picture.type(large)', $request->get('token'));
             $fbUser = $response->getGraphUser();
 
-
+            // backup version in case the first doesnt work
             // $facebookToken =  $request->get('token');
             // $url =  "https://graph.facebook.com/v13.0/me?fields=id,first_name,last_name,email&access_token=$facebookToken";
-
-            $response = Http::get($url);
+            // $response = Http::get($url);
 
             $userExists = User::where('email', $response['email'])->first();
 

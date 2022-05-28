@@ -1,9 +1,14 @@
-- Install on API
-  composer require google/apiclient
+# Google & Facebook
 
-- Controller 
+# Install on API
+
+composer require google/apiclient
+
+# Controller
+
+```shell
     use Google_Client;
-    
+
     public function google(Request $request)
     {
         $clientId = '`12345678910-2039ir23rs89u4o8ru3oruuu349qruq394ru93u.apps.googleusercontent.com';
@@ -23,13 +28,17 @@
             ]);
         }
     }
+```
 
-- Install on API
+# Install on API
+
     composer require facebook/graph-sdk
 
-- Controller 
+# Controller
+
+```shell
     use Facebook\Facebook;
-    
+
     public function facebook(Request $request): JsonResponse
     {
         try {
@@ -60,3 +69,4 @@
             ]);
         }
     }
+```
