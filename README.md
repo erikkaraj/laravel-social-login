@@ -6,7 +6,7 @@
     
     public function google(Request $request)
     {
-        $clientId = '727175353764-72nbvqv049dc0tslf2rsatga65u6url8.apps.googleusercontent.com';
+        $clientId = '`12345678910-2039ir23rs89u4o8ru3oruuu349qruq394ru93u.apps.googleusercontent.com';
         try {
             $client = new Google_Client(['client_id' => $clientId]);
             $googleData = $client->verifyIdToken($request->get('token'));
@@ -25,7 +25,7 @@
     }
 
 - Install on API
-    facebook/graph-sdk
+    composer require facebook/graph-sdk
 
 - Controller 
     use Facebook\Facebook;
